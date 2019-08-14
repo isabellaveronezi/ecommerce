@@ -1,5 +1,11 @@
 <?php 
 
+/**
+ * desc Namespace reseverd data base
+ * @copyright WebJump 
+ * @author Isabella 
+ * @since 5.4
+*/
 namespace Hcode\DB;
 
 class Sql {
@@ -11,6 +17,7 @@ class Sql {
 
 	private $conn;
 
+	/** */
 	public function __construct()
 	{
 
