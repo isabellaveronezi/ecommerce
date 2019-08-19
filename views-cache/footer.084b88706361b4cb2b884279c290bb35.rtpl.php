@@ -56,7 +56,7 @@
         <div class="row">
             <div class="col-md-8">
                 <div class="copyright">
-                    <p>&copy; 2017 Webjump Designer de informática. <a href="http://www.webjump.com.br" target="_blank">webjump.com.br</a></p>
+                    <p>&copy; 2019 Webjump Designer de informática. <a href="http://www.webjump.com.br" target="_blank">webjump.com.br</a></p>
                 </div>
             </div>
 

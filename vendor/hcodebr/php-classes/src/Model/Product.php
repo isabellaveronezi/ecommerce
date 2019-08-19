@@ -32,7 +32,7 @@ Class Product extends Model
         $sql = new Sql(); 
 
         $results =  $sql->select("CALL sp_products_save(:idproduct, :desproduct, :vlprice, :vlwidth, :vlheight, :vllength, :vlweight, :desurl)", array(
-            ":idproduct"=>$this->idproduct(),
+            ":idproduct"=>$this->getidproduct(),
             ":desproduct"=>$this->getdesproduct(),
             ":vlprice"=>$this->getvlprice(),
             ":vlwidth"=>$this->getvlwidth(), 
@@ -69,7 +69,7 @@ Class Product extends Model
    public function checkPhoto()
    {
        if(file_exists(
-           $_SERVER["DOCUMENT_ROOT"] . DIRECTORY_SEPARATOR .
+           $_SERVER['DOCUMENT_ROOT'] . DIRECTORY_SEPARATOR .
            "res" . DIRECTORY_SEPARATOR .
            "site" . DIRECTORY_SEPARATOR .
            "img" . DIRECTORY_SEPARATOR .
@@ -78,7 +78,7 @@ Class Product extends Model
        )) {
            $url = "/res/site/img/products/" . $this->getidproduct() . ".jpg";
        } else {
-           $url = "/res/site/img/products/product.jpg";
+           $url = "/res/site/img/product.jpg";
        }
        return $this->setdesphoto($url);
    }
