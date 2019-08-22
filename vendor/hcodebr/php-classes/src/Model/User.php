@@ -226,11 +226,16 @@ class User extends Model {
                 $key_IV = pack('a16', User::SECRET_IV);
                 $code = base64_encode(openssl_encrypt($dataRecovery["idrecovery"], 'AES-128-CBC', $key, 0, $key_IV));
                 
+                if ($inadmin === true) {
+                   
                     $link = "http://ecommerce.com.br/admin/forgot/reset?code=$code";
-                
+                } else {
+                   
+                    $link = "http://ecommerce.com.br/forgot/reset?code=$code";
+                }
                 
                
-                $mailer = new Mailer($data["desemail"], $data["desperson"], "Redefinir Senha da Hcode Store", "forgot", 
+                $mailer = new Mailer($data["desemail"], $data["desperson"], "Redefinir Senha da WebJump Store", "forgot", 
                 array(
                     "name"=>$data["desperson"], 
                     "link"=>$link
