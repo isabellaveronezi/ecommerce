@@ -1,29 +1,25 @@
 <?php 
 
+session_start();
 require_once("vendor/autoload.php");
 
-$app = new \Slim\Slim();
+use \Slim\Slim; 
+
+$app = new Slim(); 
 
 $app->config('debug', true);
 
-$app->get('/', function() {
-    
-   
-	$page = new Hcode\Page();
-    
-    $page->setTpl("index");
-
-});
-
-$app->get('/admin', function() {
-    
-   
-	$page = new Hcode\PageAdmin();
-    
-    $page->setTpl("index");
-
-});
+require_once ("site.php"); 
+require_once ("admin.php");
+//require_once ("admin-users.php");
+//require_once ("admin-login.php"); 
+//require_once ("admin-categories.php"); 
+//require_once ("admin-products.php");
+//require_once ("functions.php");
+//require_once ("site-profile.php");
 
 $app->run();
+
+
 
  ?>
