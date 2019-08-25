@@ -67,7 +67,7 @@ Class Category extends Model{
         
     }
 
-  /*  public function getProducts($related = true)
+    public function getProducts($related = true)
     {
         $sql = new Sql(); 
 
@@ -139,7 +139,7 @@ Class Category extends Model{
             ':idcategory'=>$this->getidcategory(),
             ':idproduct'=>$product->getidproduct()
         ]);
-    }*/
+    }
 
 
 }
