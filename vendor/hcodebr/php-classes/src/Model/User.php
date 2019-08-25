@@ -1,5 +1,11 @@
 <?php
 
+/**
+ * @copyright
+ * @author
+ * @since
+ * @see 
+ */
 namespace Hcode\Model;
 
 use \Hcode\DB\Sql; 
@@ -7,7 +13,8 @@ use \Hcode\Model;
 use \Hcode\Mailer;
 use \Hcode\Model\Cart;
 
-class User extends Model {
+
+class User extends Model { 
 
     const SESSION = "User";
     const SECRET = "HcodePhp7_Secret";
@@ -52,12 +59,13 @@ class User extends Model {
 
         }
     }
+	
 
     public static function login($login, $password)
     {
         $sql = new Sql();
         
-        $results = $sql->select("SELECT * FROM tb_users WHERE deslogin = :LOGIN", array(
+        $results = $sql->select("SELECT * FROM tb_users a INNER JOIN tb_persons b ON a.idperson = b.idperson WHERE a.deslogin = :LOGIN", array(
             ":LOGIN"=>$login
         ));
         
@@ -80,7 +88,12 @@ class User extends Model {
             throw new \Exception("Usuário inexistente ou senha inválida.");
         }
     }
-
+    /**
+     * check login if it's valid 
+     *
+     * @param boolean $inadmin
+     * @return void
+     */
     public static function verifyLogin($inadmin = true)
     {
         if(!User::checkLogin($inadmin)) {
@@ -92,27 +105,34 @@ class User extends Model {
         }
         exit;
         }
-}
-
-    public static function logout()
-    {  
-    $_SESSION[User::SESSION] = NULL; 
     }
     
+    public static function logout()
+    {  
+        $_SESSION[User::SESSION] = NULL; 
+    }
+
     public static function listAll()
     {
         $sql = new Sql(); 
         return $sql->select("SELECT * FROM tb_users a INNER JOIN tb_persons b USING(idperson) ORDER BY b.desperson"); 
     }
 
+    
     public function save()
     {
         $sql = new Sql; 
-       
+        /**pdesperson VARCHAR(64), 
+        pdeslogin VARCHAR(64), 
+        pdespassword VARCHAR(256), 
+        pdesemail VARCHAR(128), 
+        pnrphone BIGINT, 
+        pinadmin TINYINT */
+
         $results = $sql->select("CALL sp_users_save(:desperson, :deslogin, :despassword, :desemail, :nrphone, :inadmin)", array(
             ":desperson"=>utf8_decode($this->getdesperson()),
             ":deslogin"=>$this->getdeslogin(), 
-            ":despassword"=>$this->User::getPasswordHash($this->getdespassword()), 
+            ":despassword"=>User::getPasswordHash($this->getdespassword()), 
             ":desemail"=>$this->getdesemail(), 
             ":nrphone"=>$this->getnrphone(), 
             ":inadmin"=>$this->getinadmin()
@@ -123,24 +143,16 @@ class User extends Model {
 
     public function get($iduser)
     {
+ 
         $sql = new Sql();
  
         $results = $sql->select("SELECT * FROM tb_users a INNER JOIN tb_persons b USING(idperson) WHERE a.iduser = :iduser;", array(
          ":iduser"=>$iduser
         ));
             $data = $results[0];
-            $data['desperson'] = utf8_encode($data['desperson']);
             $this->setData($data);
-    }
-
-    public function delete()
-    {
-        $sql = new Sql(); 
-        
-        $sql->query("CALL sp_users_delete(:iduser)", array(
-            ":iduser"=>$this->getiduser()
-        ));
-    }
+ 
+    }  
 
     public function update()
     {
@@ -159,7 +171,22 @@ class User extends Model {
         $this->setData($results[0]);
     }
 
-    public static function getForgot($email)
+    public function delete()
+    {
+        $sql = new Sql(); 
+        
+        $sql->query("CALL sp_users_delete(:iduser)", array(
+            ":iduser"=>$this->getiduser()
+        ));
+    }
+    /**
+     * send for email to recover password
+     *
+     * @param string $email
+     * @param boolean $inadmin
+     * @return void
+     */
+    public static function getForgot($email, $inadmin = true)
     {
         $sql = new Sql();
 
@@ -198,9 +225,16 @@ class User extends Model {
                 $key = pack('a16', User::SECRET);
                 $key_IV = pack('a16', User::SECRET_IV);
                 $code = base64_encode(openssl_encrypt($dataRecovery["idrecovery"], 'AES-128-CBC', $key, 0, $key_IV));
+                
+                if ($inadmin === true) {
                    
                     $link = "http://ecommerce.com.br/admin/forgot/reset?code=$code";
-              
+                } else {
+                   
+                    $link = "http://ecommerce.com.br/forgot/reset?code=$code";
+                }
+                
+               
                 $mailer = new Mailer($data["desemail"], $data["desperson"], "Redefinir Senha da WebJump Store", "forgot", 
                 array(
                     "name"=>$data["desperson"], 
@@ -214,6 +248,12 @@ class User extends Model {
         }
     }
 
+    /**
+     * decrypt for valid change password in a minimal time 
+     *
+     * @param  $code
+     * @return void
+     */
     public static function validForgotDecrypt($code)
     {
         $sql = new Sql();
@@ -245,7 +285,8 @@ class User extends Model {
             
             return $results[0];
 
-        }      
+        }
+        
     }
 
     public static function setForgotUsed($idrecovery)
@@ -255,6 +296,7 @@ class User extends Model {
         $sql->query("UPDATE tb_userspasswordsrecoveries SET dtrecovery = NOW () WHERE idrecovery = :idrecovery", array(
             ":idrecovery"=>$idrecovery
         ));
+
     }
 
     public function setPassword($password)
@@ -283,7 +325,12 @@ class User extends Model {
     {
         $_SESSION[User::ERROR] = NULL;
     }
-
+   
+    public static function setSuccess($msg)
+    {
+        $_SESSION[User::SUCCESS] = $msg;
+    }
+   
     public static function getSuccess()
     {
         $msg = (isset($_SESSION[User::SUCCESS]) && $_SESSION[User::SUCCESS]) ? $_SESSION[User::SUCCESS] : '';
@@ -330,7 +377,5 @@ class User extends Model {
             'cost'=>12
         ]);
     }
-
-
+    
 }
-
