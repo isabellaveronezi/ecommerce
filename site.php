@@ -73,4 +73,42 @@ $app->get('/categories/:idcategory', function($idcategory)
 
 });
 
+$app->get('/products', function () {
+    
+    $page = (isset($_GET['page'])) ? (int)$_GET['page'] : 1;
+    
+    $products = new Product();
+    
+    $pagination = $products->getPage($page);
+    $pages = [];
+    
+    for ($i = 1; $i <= $pagination['pages']; $i++) {
+        array_push($pages, [
+            'link'=>'/products' . $products->getidproduct() . '?page=' . $i,
+            'page'=>$i
+        ]);
+    }
+    
+    $page = new Page();
+    
+    $page->setTpl("products", [
+        "products"=>$pagination["data"],
+        "pages"=>$pages
+    ]);
+});
+
+$app->get('/products/:desurl', function($desurl)
+{
+    $product = new Product();
+
+    $product->getFromURL($desurl); 
+
+    $page = new Page(); 
+    $page->setTpl("product-detail", array(
+        'product'=>$product->getValues(),
+       // 'categories'=>$product->getCategories()
+    ));
+}); 
+
+
 ?>

@@ -52,6 +52,34 @@ Class Category extends Model{
         Category::updateFile(); 
     }
 
+    public function getProducts($related = true)
+    {
+        $sql = new Sql(); 
+
+        if($related === true){
+
+            return $sql->select("SELECT * FROM tb_products WHERE idproduct IN(
+                SELECT a.idproduct
+                FROM tb_products a 
+                INNER JOIN tb_productscategories b ON a.idproduct LIKE b.idproduct
+                WHERE b.idcategory LIKE :idcategory);
+                ", [
+                    ':idcategory'=>$this->getidcategory()
+                ]);
+                
+        } else {
+
+            return $sql->select("SELECT * FROM tb_products WHERE idproduct NOT IN(
+                SELECT a.idproduct
+                FROM tb_products a 
+                INNER JOIN tb_productscategories b ON a.idproduct LIKE b.idproduct
+                WHERE b.idcategory LIKE :idcategory);
+                ", [
+                    ':idcategory'=>$this->getidcategory()
+                ]);         
+        }
+    }
+
     public function getProductsPage ($page = 1, $itemsPerPage = 3)
     {
         $start = ($page - 1) * $itemsPerPage;
@@ -76,5 +104,29 @@ Class Category extends Model{
         ];
         
     }
+
+    public function addProduct(Product $product)
+    {
+        $sql = new Sql(); 
+
+        $sql->query("INSERT INTO tb_productscategories (idcategory, idproduct) VALUES (:idcategory, :idproduct)", [
+            ':idcategory'=>$this->getidcategory(),
+            ':idproduct'=>$product->getidproduct()
+        ]);
+
+    }
+
+    public function removeProduct(Product $product)
+    {
+        $sql = new Sql();
+        
+        $sql->query("DELETE FROM tb_productscategories WHERE idcategory =:idcategory AND idproduct = :idproduct", [
+            ':idcategory'=>$this->getidcategory(),
+            ':idproduct'=>$product->getidproduct()
+        ]);
+    }
+
+
 }
+
 
