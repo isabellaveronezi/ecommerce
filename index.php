@@ -18,6 +18,7 @@ require_once ("admin-products.php");
 require_once ("functions.php");
 require_once ("site-categories.php");
 require_once ("site-profile.php");
+require_once ("admin-orders.php");
 
 $app->run();
 
