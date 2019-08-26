@@ -17,7 +17,6 @@ class Sql {
 
 	private $conn;
 
-	/** */
 	public function __construct()
 	{
 
@@ -67,10 +66,9 @@ class Sql {
 
 		$stmt->execute();
 
-		return $stmt->fetchAll(\PDO::FETCH_ASSOC);
-
-	}
-
+        return $stmt->fetchAll(\PDO::FETCH_ASSOC);
 }
 
- ?>
+
+
+}

@@ -152,6 +152,7 @@ $app->get('/checkout', function()
     }
 
     if (!$address->getdesaddress()) $address->setdesaddress('');
+    if (!$address->getdesnumber()) $address->setdesnumber('');
     if (!$address->getdescomplement()) $address->setdescomplement('');
     if (!$address->getdescity()) $address->setdescity('');
     if (!$address->getdesstate()) $address->setdesstate('');
