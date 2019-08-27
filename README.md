@@ -112,8 +112,9 @@ E
 <hr> </hr>
 
 <h1> 
-Telas: 
+Telas Admin: 
 </h1>
+<hr> </hr>
 
 <h3> 
 Login Admin
@@ -149,5 +150,168 @@ Alterar senha usuários Admin
 </h3>
 
 <img src= "https://github.com/isabellaveronezi/ecommerce/blob/master/git/editarsenhausuario.png" alt="la" style="max-width:100%;">
+
+<h3>
+Categorias Admin
+</h3>
+
+<img src= "https://github.com/isabellaveronezi/ecommerce/blob/master/git/categoriasadmin.png" alt="la" style="max-width:100%;">
+
+<h3>
+Editar categorias Admin
+</h3>
+
+<img src= "https://github.com/isabellaveronezi/ecommerce/blob/master/git/editarcategoriasadmin.png" alt="la" style="max-width:100%;">
+
+<h3>
+Relação produto e categorias Admin
+</h3>
+
+<img src= "https://github.com/isabellaveronezi/ecommerce/blob/master/git/rela%C3%A7aoprodutocategoria.png" alt="la" style="max-width:100%;">
+
+<h3>
+Relação produto e categorias Admin
+</h3>
+
+<img src= "https://github.com/isabellaveronezi/ecommerce/blob/master/git/rela%C3%A7aoprodutocategoria.png" alt="la" style="max-width:100%;">
+
+<h3>
+Produtos Admin
+</h3>
+
+<img src= "https://github.com/isabellaveronezi/ecommerce/blob/master/git/produtosadmin.png" alt="la" style="max-width:100%;">
+
+<h3>
+Editar produtos Admin
+</h3>
+
+<img src= "https://github.com/isabellaveronezi/ecommerce/blob/master/git/editarprodutoadmin.png" alt="la" style="max-width:100%;">
+
+<h3>
+Cadastrar produtos Admin
+</h3>
+
+<img src= "https://github.com/isabellaveronezi/ecommerce/blob/master/git/cadastrarprodutoadmin.png" alt="la" style="max-width:100%;">
+
+
+<h3>
+Cadastrar produtos Admin
+</h3>
+
+<img src= "https://github.com/isabellaveronezi/ecommerce/blob/master/git/cadastrarprodutoadmin.png" alt="la" style="max-width:100%;">
+
+<h3>
+Pedidos Admin
+</h3>
+
+<img src= "https://github.com/isabellaveronezi/ecommerce/blob/master/git/pedidosAdmin.png" alt="la" style="max-width:100%;">
+
+<h3>
+Status de pedidos Admin
+</h3>
+
+<img src= "https://github.com/isabellaveronezi/ecommerce/blob/master/git/statuspedidoadmin.png" alt="la" style="max-width:100%;">
+
+<h3>
+Detalhes do pedidos Admin
+</h3>
+
+<img src= "https://github.com/isabellaveronezi/ecommerce/blob/master/git/detalhesdopedidoadmin.png" alt="la" style="max-width:100%;">
+
+<h3>
+Recuperar senha Admin
+</h3>
+
+<img src= "https://github.com/isabellaveronezi/ecommerce/blob/master/git/recuperarsenhadmin.png" alt="la" style="max-width:100%;">
+
+<hr> </hr>
+
+<h1> 
+Telas Site: 
+</h1>
+<hr> </hr>
+
+<h3>
+Home 
+</h3>
+
+<img src= "https://github.com/isabellaveronezi/ecommerce/blob/master/git/homesite.png" alt="la" style="max-width:100%;">
+<img src= "https://github.com/isabellaveronezi/ecommerce/blob/master/git/homesite2.png" alt="la" style="max-width:100%;">
+<img src= "https://github.com/isabellaveronezi/ecommerce/blob/master/git/homesite3.png" alt="la" style="max-width:100%;">
+
+<h3>
+Produtos 
+</h3>
+
+<img src= "https://github.com/isabellaveronezi/ecommerce/blob/master/git/produtossite.png" alt="la" style="max-width:100%;">
+
+<h3>
+Produtos 
+</h3>
+
+<img src= "https://github.com/isabellaveronezi/ecommerce/blob/master/git/produtossite.png" alt="la" style="max-width:100%;">
+
+<h3>
+Detalhes do produto
+</h3>
+
+<img src= "https://github.com/isabellaveronezi/ecommerce/blob/master/git/detalhesproduto.png" style="max-width:100%;">
+
+<h3>
+Categorias
+</h3>
+
+<img src= "https://github.com/isabellaveronezi/ecommerce/blob/master/git/categoria.png" alt="la" style="max-width:100%;">
+
+<h3>
+Categorias
+</h3>
+
+<img src= "https://github.com/isabellaveronezi/ecommerce/blob/master/git/categoria.png" alt="la" style="max-width:100%;">
+
+<h3>
+Carrinho de compra
+</h3>
+
+<img src= "https://github.com/isabellaveronezi/ecommerce/blob/master/git/carrinhocompra.png" alt="la" style="max-width:100%;">
+
+
+<h3>
+Checkout
+</h3>
+
+<img src= "https://github.com/isabellaveronezi/ecommerce/blob/master/git/checkout.png" alt="la" style="max-width:100%;">
+<img src= "https://github.com/isabellaveronezi/ecommerce/blob/master/git/checkout2.png" alt="la" style="max-width:100%;">
+<img src= "https://github.com/isabellaveronezi/ecommerce/blob/master/git/checkout3.png" alt="la" style="max-width:100%;">
+
+<h3>
+Login
+</h3>
+
+<img src= "https://github.com/isabellaveronezi/ecommerce/blob/master/git/loginusuario.png" alt="la" style="max-width:100%;">
+
+<h3>
+Minha conta
+</h3>
+
+<img src= "https://github.com/isabellaveronezi/ecommerce/blob/master/git/minhacontasite.png" alt="la" style="max-width:100%;">
+
+<h3>
+Alterar senha
+</h3>
+
+<img src= "https://github.com/isabellaveronezi/ecommerce/blob/master/git/alterarsenhasite.png" alt="la" style="max-width:100%;">
+
+<h3>
+Meus pedidos
+</h3>
+
+<img src= "https://github.com/isabellaveronezi/ecommerce/blob/master/git/meuspedidossite.png" alt="la" style="max-width:100%;">
+
+<h3>
+Detalhes do pedido
+</h3>
+
+<img src= "https://github.com/isabellaveronezi/ecommerce/blob/master/git/detalhespedidosite.png" alt="la" style="max-width:100%;">
 
 
