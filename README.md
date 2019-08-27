@@ -86,7 +86,7 @@ Possui apenas um método, é uma classe final que serve apenas para gerenciar os
 <li> <b> Vendor -> Hcodebr -> php-classes -> src -> Model -> Product.php </li> </b>
 </ul>
 
-Classe responsável pelo CRUD de produtos, traser a wishlist atrelado ao usuário, categoria e o carrinho. Possui métodos para paginação. OBSERVAÇÃO: Essa classe necessita de uma tabela contendo as relações entre REVIEW n-1 PRODUTOS.
+Classe responsável pelo CRUD de produtos, categoria e o carrinho. Possui métodos para paginação. OBSERVAÇÃO: Essa classe necessita de uma tabela contendo as relações entre REVIEW n-1 PRODUTOS.
 <ul>
 <li> <b> Vendor -> Hcodebr -> php-classes -> src -> Model -> User.php </li> </b>
 </ul>
