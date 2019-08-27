@@ -86,18 +86,13 @@ Possui apenas um método, é uma classe final que serve apenas para gerenciar os
 <li> <b> Vendor -> Hcodebr -> php-classes -> src -> Model -> Product.php </li> </b>
 </ul>
 
-Classe responsável pelo CRUD de produtos, traser a wishlist atrelado ao usuário, categoria e o carrinho. Possui métodos para paginação, OBSERVAÇÃO: Essa classe necessita de uma tabela contendo as relações entre REVIEW n-1 PRODUTOS.
+Classe responsável pelo CRUD de produtos, traser a wishlist atrelado ao usuário, categoria e o carrinho. Possui métodos para paginação. OBSERVAÇÃO: Essa classe necessita de uma tabela contendo as relações entre REVIEW n-1 PRODUTOS.
 <ul>
 <li> <b> Vendor -> Hcodebr -> php-classes -> src -> Model -> User.php </li> </b>
 </ul>
 
-Classe responsável pelo CRUD de usuários e validação de login (admin ou não). Possui método para paginação, forgot password via classe Mailer.php, get Orders e o captch do google.
+Classe responsável pelo CRUD de usuários e validação de login (admin ou não). Possui método para paginação, forgot password via classe Mailer.php, get Orders.
 
-<ul>
-<li> <b> Vendor -> Hcodebr -> php-classes -> src -> Model -> Wishlist.php </li> </b>
-</ul>
-
-Classe responsável pelo CRUD da lista de desejos OBSERVAÇÃO: Essa classe necessita de uma tabela contendo as relações entre USUÁRIO 1-n PRODUTOS.
 <ul>
 <li> <b> Vendor -> Hcodebr -> php-classes -> src -> Model -> Cart.php </li> </b>
 </ul>
