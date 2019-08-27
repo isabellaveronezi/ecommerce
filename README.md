@@ -137,3 +137,17 @@ Cadastro usuários Admin
 </h3>
 
 <img src= "https://github.com/isabellaveronezi/ecommerce/blob/master/git/cadastrousuarioadmin.png" alt="la" style="max-width:100%;">
+
+<h3>
+Editar usuários Admin
+</h3>
+
+<img src= "https://github.com/isabellaveronezi/ecommerce/blob/master/git/editarusuario.png" alt="la" style="max-width:100%;">
+
+<h3>
+Alterar senha usuários Admin
+</h3>
+
+<img src= "https://github.com/isabellaveronezi/ecommerce/blob/master/git/editarsenhausuario.png" alt="la" style="max-width:100%;">
+
+
