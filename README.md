@@ -246,22 +246,10 @@ Produtos
 <img src= "https://github.com/isabellaveronezi/ecommerce/blob/master/git/produtossite.png" alt="la" style="max-width:100%;">
 
 <h3>
-Produtos 
-</h3>
-
-<img src= "https://github.com/isabellaveronezi/ecommerce/blob/master/git/produtossite.png" alt="la" style="max-width:100%;">
-
-<h3>
 Detalhes do produto
 </h3>
 
 <img src= "https://github.com/isabellaveronezi/ecommerce/blob/master/git/detalhesproduto.png" style="max-width:100%;">
-
-<h3>
-Categorias
-</h3>
-
-<img src= "https://github.com/isabellaveronezi/ecommerce/blob/master/git/categoria.png" alt="la" style="max-width:100%;">
 
 <h3>
 Categorias
